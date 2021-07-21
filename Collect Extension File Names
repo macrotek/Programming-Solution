@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Text;
+
+namespace ExtractResourceFiles
+{
+    static class Program
+    {
+        static void Main()
+        { 
+            int i;
+            string[] files = Directory.GetFiles("D://Solution 19.07.2021//PROJECTGUI", "*.resx");
+
+            if ((!File.Exists(@"D:\scores.txt"))) //Checking if scores.txt exists or not
+            {
+                FileStream fs = File.Create("scores.txt"); //Creates Scores.txt
+                fs.Close(); //Closes file stream
+            }
+            StreamWriter SW = new StreamWriter(@"D:\scores.txt");
+            try
+            {      
+                for (i = 0; i < files.Length; i++)
+                {
+                    string subString = files[i].Substring(files[i].LastIndexOf("\\") + 1);
+                    SW.WriteLine(subString);
+                   // File.WriteAllLines(@"D:\scores.txt", files);// Write array into the text file.
+                }
+                
+            }
+            finally
+            {
+                SW.Flush();
+                SW.Close();
+                SW.Dispose();
+            }
+                
+        }
+    }
+}
