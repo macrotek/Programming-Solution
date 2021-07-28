@@ -1,0 +1,62 @@
+		STEP:1
+    
+    StreamWriter SW = null; //Declare variable globally into the class.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+		STEP:2
+    // Put this code at the end of Windows Form Load Event
+		            string[] Labeldata = null;
+                SW = new StreamWriter(@"E:\FlexisoftT\scores.txt");// Path where file will create
+                foreach (Control x in this.Controls)
+                {
+                    var nameOfControl = new string[1];
+                    // var nameOfControl = new string[] { x.Name };
+                    if (x is Label)
+                    {
+                        var z = (Label)x;
+                        nameOfControl = new string[] { z.Text };
+                    }
+                    else if (x is Button)
+                    {
+                        var z = (Button)x;
+                        nameOfControl = new string[] { z.Text };
+
+                    }
+                    else if (x is CheckBox)
+                    {
+                        var z = (CheckBox)x;
+                        nameOfControl = new string[] { z.Text };
+                    }
+                    Labeldata = nameOfControl;
+                    getAllControls(Labeldata); //Call to the created function
+                }
+            }
+            
+            finally
+            {
+                SW.Flush();
+                SW.Close();
+                SW.Dispose();
+            }
+--------------------------------------------------------------------------------------------------------------------------------------
+STEP:3
+
+	//Create new method into the class 
+	public void getAllControls(string[] arrayControls)
+        {
+
+            try
+            {
+                for (int i = 0; i < arrayControls.Length; i++)
+                {
+                    string[] subString = arrayControls;
+                    
+                    SW.WriteLine(subString[0]);
+                }
+            }
+            catch(Exception ex)
+            {
+           
+            }
+
+        }
