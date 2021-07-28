@@ -1,9 +1,9 @@
-		STEP:1
+STEP:1
     
     StreamWriter SW = null; //Declare variable globally into the class.
 
 -------------------------------------------------------------------------------------------------------------------------------------
-		STEP:2
+STEP:2
     // Put this code at the end of Windows Form Load Event
 		            string[] Labeldata = null;
                 SW = new StreamWriter(@"E:\FlexisoftT\scores.txt");// Path where file will create
