@@ -1,0 +1,256 @@
+STEP:1---> 
+	
+	        //Write this code inside the Windows Form Load Event.	
+           try
+            {
+                string[] Labeldata = null;
+                string[] Finaldata = null;
+                //string[] Labeldata2 = null;
+                SW = new StreamWriter(@"E:\FlexisoftT\scores.txt");
+                foreach (Control control in this.Controls)
+                {
+                    var nameOfControl = new string[1];
+
+                    if (control is Button)
+                    {
+                        var x = (Button)control;
+                        nameOfControl = new string[] { x.Text };
+
+                    }
+                    else if (control is GroupBox)
+                    {
+                        var z = (GroupBox)control;
+                        nameOfControl = new string[] { z.Text };
+                    }
+                    else if (control is TextBox)
+                    {
+                        var z = (TextBox)control;
+                        nameOfControl = new string[] { z.Text };
+                    }
+                    else if (control is Label)
+                    {
+
+                        var z = (Label)control;
+                        nameOfControl = new string[] { z.Text };
+                    }
+                    else if (control is CheckBox)
+                    {
+                        var z = (CheckBox)control;
+                        nameOfControl = new string[] { z.Text };
+                    }
+                    Labeldata = nameOfControl;
+                    if (Labeldata[0] != null && Labeldata != Finaldata && Labeldata[0] != "")
+                    {
+                        Finaldata = Labeldata;
+                        getAllControls(Finaldata);
+                    }
+
+                    foreach (Control ctr in control.Controls)
+                    {
+                        //var nameOfControl = new string[1];
+                        if (ctr is TextBox)
+                        {
+                            var z = (TextBox)ctr;
+                            nameOfControl = new string[] { z.Text };
+                        }
+                        else if (ctr is Label)
+                        {
+
+                            var z = (Label)ctr;
+                            nameOfControl = new string[] { z.Text };
+                        }
+                        else if (ctr is Button)
+                        {
+                            var z = (Button)ctr;
+                            nameOfControl = new string[] { z.Text };
+
+                        }
+                        else if (ctr is CheckBox)
+                        {
+                            var z = (CheckBox)ctr;
+                            nameOfControl = new string[] { z.Text };
+                        }
+                        else if (ctr is GroupBox)
+                        {
+                            var z = (GroupBox)ctr;
+                            nameOfControl = new string[] { z.Text };
+                        }
+                        else if (ctr is RadioButton)
+                        {
+                            var z = (RadioButton)ctr;
+                            nameOfControl = new string[] { z.Text };
+                        }
+
+                        Labeldata = nameOfControl;
+
+                        if (Labeldata[0] != null && Labeldata != Finaldata && Labeldata[0] != "")
+                        {
+                            Finaldata = Labeldata;
+                            getAllControls(Finaldata);
+                        }
+                        foreach (Control ctr2 in ctr.Controls)
+                        {
+
+                            if (ctr2 is TextBox)
+                            {
+                                var z = (TextBox)ctr2;
+                                nameOfControl = new string[] { z.Text };
+                            }
+                            else if (ctr2 is Label)
+                            {
+
+                                var z = (Label)ctr2;
+                                nameOfControl = new string[] { z.Text };
+                            }
+                            else if (ctr2 is Button)
+                            {
+                                var z = (Button)ctr2;
+                                nameOfControl = new string[] { z.Text };
+
+                            }
+                            else if (ctr2 is CheckBox)
+                            {
+                                var z = (CheckBox)ctr2;
+                                nameOfControl = new string[] { z.Text };
+                            }
+                            else if (ctr2 is GroupBox)
+                            {
+                                var z = (GroupBox)ctr2;
+                                nameOfControl = new string[] { z.Text };
+                            }
+                            else if (ctr2 is RadioButton)
+                            {
+                                var z = (RadioButton)ctr2;
+                                nameOfControl = new string[] { z.Text };
+                            }
+
+                            Labeldata = nameOfControl;
+
+                            if (Labeldata[0] != null && Labeldata != Finaldata && Labeldata[0] != "")
+                            {
+                                Finaldata = Labeldata;
+                                getAllControls(Finaldata);
+                            }
+                            foreach (Control ctr3 in ctr2.Controls)
+                            {
+
+                                if (ctr3 is TextBox)
+                                {
+                                    var z = (TextBox)ctr3;
+                                    nameOfControl = new string[] { z.Text };
+                                }
+                                else if (ctr3 is Label)
+                                {
+
+                                    var z = (Label)ctr3;
+                                    nameOfControl = new string[] { z.Text };
+                                }
+                                else if (ctr3 is Button)
+                                {
+                                    var z = (Button)ctr3;
+                                    nameOfControl = new string[] { z.Text };
+
+                                }
+                                else if (ctr3 is CheckBox)
+                                {
+                                    var z = (CheckBox)ctr3;
+                                    nameOfControl = new string[] { z.Text };
+                                }
+                                else if (ctr3 is GroupBox)
+                                {
+                                    var z = (GroupBox)ctr3;
+                                    nameOfControl = new string[] { z.Text };
+                                }
+                                else if (ctr3 is RadioButton)
+                                {
+                                    var z = (RadioButton)ctr3;
+                                    nameOfControl = new string[] { z.Text };
+                                }
+
+                                Labeldata = nameOfControl;
+
+                                if (Labeldata[0] != null && Labeldata != Finaldata && Labeldata[0] != "")
+                                {
+                                    Finaldata = Labeldata;
+                                    getAllControls(Finaldata);
+                                }
+                                foreach (Control x in ctr3.Controls)
+                                {
+                                    //var nameOfControl = new string[1];
+                                    if (x is TextBox)
+                                    {
+                                        var z = (TextBox)x;
+                                        nameOfControl = new string[] { z.Text };
+                                    }
+                                    else if (x is Label)
+                                    {
+
+                                        var z = (Label)x;
+                                        nameOfControl = new string[] { z.Text };
+                                    }
+                                    else if (x is Button)
+                                    {
+                                        var z = (Button)x;
+                                        nameOfControl = new string[] { z.Text };
+
+                                    }
+                                    else if (x is CheckBox)
+                                    {
+                                        var z = (CheckBox)x;
+                                        nameOfControl = new string[] { z.Text };
+                                    }
+                                    else if (x is GroupBox)
+                                    {
+                                        var z = (GroupBox)x;
+                                        nameOfControl = new string[] { z.Text };
+                                    }
+                                    else if (x is RadioButton)
+                                    {
+                                        var z = (RadioButton)x;
+                                        nameOfControl = new string[] { z.Text };
+                                    }
+
+                                    Labeldata = nameOfControl;
+
+                                    if (Labeldata[0] != null && Labeldata != Finaldata && Labeldata[0] != "")
+                                    {
+                                        Finaldata = Labeldata;
+                                        getAllControls(Finaldata);
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                SW.Flush();
+                //SW.Close();
+                SW.Dispose();
+            }
+---------------------------------------------------------------------------------------------------------------------------
+STEP:2--->
+
+ //Create new method into the class 
+        public void getAllControls(string[] arrayControls)
+        {
+
+            try
+            {
+                for (int i = 0; i < arrayControls.Length; i++)
+                {
+                    string[] subString = arrayControls;
+
+                    SW.WriteLine(subString[0]);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }        
