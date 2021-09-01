@@ -1,0 +1,21 @@
+        public static Dictionary<string, object> DictionaryFromType(object atype)
+        {
+           //Streamwriter class is used to create and write to the file.
+            System.IO.StreamWriter SWr = null;
+            if (atype == null) return new Dictionary<string, object>();
+            Type t = atype.GetType();
+            PropertyInfo[] props = t.GetProperties(); //Get all properties from property grid control
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            SWr = new System.IO.StreamWriter(@"E://FlexisoftT//PropertyCollection.txt"); //Create file on this path
+            foreach (PropertyInfo prp in props)
+            {
+                for (int i = 0; i < props.Length; i++)
+                {
+                    string lastWordFrom = Convert.ToString(props[i]);
+                    string lastWord = lastWordFrom.Split(' ').Last();
+                    SWr.WriteLine(lastWord);
+                }
+               
+            }
+            return dict;
+        }
