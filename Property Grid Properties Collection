@@ -1,0 +1,11 @@
+            ResourceManager MyResourceClass = new ResourceManager(typeof(AdvancedSingleBargraphProperties)); //AdvancedSingleBargraphProperties replace with your resourse file.
+
+            ResourceSet resourceSet = MyResourceClass.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            System.IO.StreamWriter SWr = null;
+            SWr = new System.IO.StreamWriter(@"E://FlexisoftT//AdvancedSingleBargraphProperties.txt");// Create File on this path with the help of streamwriter class.
+            foreach (DictionaryEntry entry in resourceSet)
+            {
+                object resource = entry.Value; // Get values of properties.
+                SWr.WriteLine(resource); // Write into the file which we have generated.(eg.AdvancedSingleBargraphProperties.txt)
+            }
+            SWr.Flush();
