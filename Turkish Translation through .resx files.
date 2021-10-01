@@ -1,0 +1,27 @@
+Step 1: Call static method from Main method
+
+		   ---- ClassList.CommonConstants.SetLanguageCulture();//GB_Turkish Language Conversion
+
+Step 2: Declare and initialize static member into the commonconstant.cs
+
+		   ---- public static int Lang_identifier = 1; //GB_Turkish Language Conversion
+
+Step 3: Define static method into the commonconstant.cs
+
+		   ----  public static CultureInfo SetLanguageCulture()
+       			 {
+           			   CultureInfo cul;
+            			 if (ClassList.CommonConstants.Lang_identifier == 0)
+            				{
+              				  cul = CultureInfo.CreateSpecificCulture("en");
+          			    }
+           			   else
+           				  {
+                		    cul = CultureInfo.CreateSpecificCulture("tr-TR");
+            				}
+
+           			  Thread.CurrentThread.CurrentCulture = cul;
+            			Thread.CurrentThread.CurrentUICulture = cul;
+
+           			  return cul;
+      		   } 
